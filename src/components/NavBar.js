@@ -24,6 +24,14 @@ export default () =>{
             onClick={handleItemClick}
           />
         </Link>
+        <Link to='/users'>
+        <Menu.Item
+            as="div"
+            name='users'
+            active={activeItem === 'users'}
+            onClick={handleItemClick}
+          />
+        </Link>
         </Menu>
       </Segment>
     );
