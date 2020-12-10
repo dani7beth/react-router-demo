@@ -1,6 +1,7 @@
 import Axios from "axios";
 import { useEffect , useState} from "react";
 import { useHistory, useParams } from "react-router-dom";
+import Userform from "./UserForm";
 const { Header, Button, Card, Image } = require("semantic-ui-react");
 
 const User = () =>{
@@ -19,14 +20,20 @@ const User = () =>{
         }
     }
 
+    const updateUser = async () =>{
+        try{
+            let res =  Axios.put(`https://reqres.in/api/users/${id}`, user);
+            setUser(res.data);
+        }catch(err){
+            console.log(err);
+        }
+    }
     useEffect(()=>{
         getUser();
     }, []);
 
     return(
         <>
-        <Header>User</Header>
-        <p>id: {id} </p>
         <Card>
         <Image src={user.avatar} wrapped ui={false} />
         <Card.Content>
@@ -37,6 +44,7 @@ const User = () =>{
       </Card.Description>
     </Card.Content>
   </Card>
+    <Userform user={user} updateUser={updateUser}/>
         {/* <Button onClick={history.push('/')}>Go Home</Button> */}
         </>
     )

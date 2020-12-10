@@ -14,7 +14,7 @@ const Users = () =>{
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        Axios.get('https://reqres.in/api/users?delay=3')
+        Axios.get('https://reqres.in/api/users?delay=2')
         .then((res)=>{
             setUsers(res.data.data);
             setLoading(false);
