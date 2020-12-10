@@ -44,7 +44,7 @@ const User = () =>{
       </Card.Description>
     </Card.Content>
   </Card>
-    <Userform user={user} updateUser={updateUser}/>
+    {/* <Userform user={user} updateUser={updateUser}/> */}
         {/* <Button onClick={history.push('/')}>Go Home</Button> */}
         </>
     )
